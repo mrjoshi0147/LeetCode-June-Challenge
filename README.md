@@ -1,2 +1,2 @@
 # LeetCode-June-Challenge
-Here are my solutions of June Challenge on LeetCode
+Here are my solutions of June Challenge.

@@ -1,0 +1,20 @@
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if( root == null){
+        
+    }
+    
+    public void helper(TreeNode n){
+    
+    if(n == null){
+    return; 
+    }
+    else{
+     TreeNode m=n.left;
+      m.left=n.right;
+        n.right=m;
+        
+        helper(n.left);
+        helper(n.right);
+    
+}

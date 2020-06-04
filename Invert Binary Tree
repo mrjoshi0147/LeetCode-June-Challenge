@@ -1,6 +1,7 @@
 class Solution {
     public TreeNode invertTree(TreeNode root) {
-        if( root == null){
+     helper(root);
+     return root;
         
     }
     
@@ -16,5 +17,5 @@ class Solution {
         
         helper(n.left);
         helper(n.right);
-    
+    }
 }

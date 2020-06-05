@@ -1,0 +1,34 @@
+class Solution {
+    
+    private List<Integer>list;
+    private Random random;
+    private int sum;
+    
+
+    public Solution(int[] w) {
+        
+        list=new ArrayList<>();
+        
+        random =new Random();
+        
+        list.add(0);
+        
+        for(int val:w){
+            sum+=val;
+            list.add(sum);
+        }
+        
+    }
+    
+    public int pickIndex() {
+      
+      // in java we have collection library for almost everything so instead of writing code we can simply write this  
+      // we can also search by linear search but to make our code efficient we can simply apply binary search
+      
+      
+int idx=Collections.binarySearch(list,random.nextInt(sum));
+        
+        return idx>=0? idx : -(idx+2);
+ 
+    }
+}

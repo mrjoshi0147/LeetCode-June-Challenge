@@ -1,0 +1,31 @@
+class Solution {
+    public int numSquares(int n) {
+        int[] ar=new int[n+1];
+     return helper(n , ar);
+        
+    }
+    
+    public int helper(int n , int[] ar){
+        if(n<0){
+            return Integer.MAX_VALUE ;
+        }
+        
+         if(n == 0){
+            return 0;
+        }
+        
+        if(ar[n] > 0){
+            return ar[n];
+        }
+        
+        int min=n;
+        
+        for(int i=1;i*i<= n; i++  ){
+            min=Math.min(helper(n-(i*i),ar) , min);
+        }
+        
+        ar[n] = min+1;
+        
+        return min+1;
+    }
+}

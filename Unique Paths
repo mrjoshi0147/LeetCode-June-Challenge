@@ -1,0 +1,22 @@
+class Solution {
+    public int uniquePaths(int m, int n) {
+        
+        
+        int[][] paths=new int[n][m];
+        for(int i=0;i< m ;i++){
+            paths[n-1][i]=1;
+        }
+        
+        for(int j=0;j< n ; j++){
+            paths[j][m-1] = 1;
+        }
+        
+        for(int k= n-2;k >= 0 ; k--){
+            for(int c=m-2 ; c>= 0 ; c--){
+                paths[k][c] = paths[k][c+1] + paths[k+1][c];
+            }
+        }
+        
+        return paths[0][0];
+    }
+}
